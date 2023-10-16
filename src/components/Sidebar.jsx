@@ -1,6 +1,9 @@
 import { BsSearch } from "react-icons/bs";
 
-function Sidebar({toggleCreator}) {
+function Sidebar({toggleCreator, meals}) {
+
+    const sortedMeals = [...meals].sort((a,b) => new Date(b.created_at) - new Date(a.created_at));
+
     return (
         <div className="sidebar-container">
             <div className="sidebar-inside-container">
@@ -9,15 +12,20 @@ function Sidebar({toggleCreator}) {
                     <p>Search by week or recipies</p>
                 </div>
                 <div className="enteries-container">
-                    <div className="week-container">
-                        <div className="colored-identifier">
-                            <div className="circle"></div>
+                    {sortedMeals.map((meal, index) => {
+                        return(
+                        <div className="meal-container">
+                            <div className="colored-identifier">
+                                <div className="circle"></div>
+                            </div>
+                            <div className="text-container">
+                                <p>{meal.title}</p>
+                                <span>{meal.meal_type}</span>
+                            </div>
                         </div>
-                        <div className="text-container">
-                            <h3>Oct. 2 - Oct. 9</h3>
-                            <p>Speghetti, French toast, Eggs and Bacon...</p>
-                        </div>
-                    </div>
+                        )
+                    })
+                    }
                 </div>
                 <button className="add-button" onClick={toggleCreator}>+</button>
             </div>

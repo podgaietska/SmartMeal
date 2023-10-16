@@ -1,12 +1,12 @@
 import {IoIosLogOut} from 'react-icons/io';
 
-function Header({ profile, logout }) {
+function Header({ profile, logout, toggleSidebar }) {
     return (
         <div className="app-header">
             <div className="left-container">
                 <h1>SmartMeal</h1>
                 <div className="menu">
-                    <h1>&#9776;</h1>
+                    <h1 onClick={toggleSidebar}>&#9776;</h1>
                 </div>
             </div>
             {profile && (
