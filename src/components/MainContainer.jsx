@@ -7,7 +7,7 @@ function Main({meals, sidebarVisible, darkMode}) {
     return (
         <div className={`main-container ${sidebarVisible ? '' : 'full-screen'} ${darkMode && "dark"}`}>
             <div className={`header ${darkMode && "dark"}`}>
-                <p>All Meals</p>
+                <p>My Meals</p>
             </div>
                 <RecipeList meals={sortedMeals} darkMode={darkMode}/>
         </div>

@@ -33,7 +33,7 @@ function RecipeList({onUpdateObituary, meals, darkMode}) {
         setfourColumns(fourColumns);
       }, [meals]);
 
-    if (meals.length === 0) return <div className="no-meals"><h1>No Meals Yet</h1></div>;
+    if (meals.length === 0) return <div className="no-meals"></div>;
 
     return(
         <>

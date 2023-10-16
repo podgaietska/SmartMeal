@@ -6,7 +6,7 @@ function Header({ profile, logout, toggleSidebar, darkMode, setDarkMode }) {
     const handleModeSwitch = () => {
         setDarkMode(!darkMode);
     }
-
+    
     return (
         <div className="app-header">
             <div className="left-container">
