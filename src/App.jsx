@@ -17,6 +17,7 @@ function App() {
   const [ingredient, setIngredient] = useState("");
   const [meals, setMeals] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
 
   const toggleCreator = () => {
     setCreatorVisible(!creatorVivsible);
@@ -157,14 +158,14 @@ function extractIngredients(meal_recipe) {
 
 
   return (
-    <div className="App">
+    <div className={`App ${darkMode && "dark"}`}>
       {profile ? (
         <>
-        {creatorVivsible && <Creator toggleCreator={toggleCreator} setIngredient={setIngredient} setIngredients={setIngredients} ingredient={ingredient} ingredients={ingredients} addMeal={addMeal} loading={loading}/>}
-        <Header profile={profile} logout={logOut} toggleSidebar={toggleSidebar}/>
+        {creatorVivsible && <Creator toggleCreator={toggleCreator} setIngredient={setIngredient} setIngredients={setIngredients} ingredient={ingredient} ingredients={ingredients} addMeal={addMeal} loading={loading} darkMode={darkMode}/>}
+        <Header profile={profile} logout={logOut} toggleSidebar={toggleSidebar} darkMode={darkMode} setDarkMode={setDarkMode}/>
         <div className="main">
-          {sidebarVisible && <Sidebar toggleCreator={toggleCreator} meals={meals}/>}
-          <MainContainer meals={meals} sidebarVisible={sidebarVisible}/>
+          {sidebarVisible && <Sidebar toggleCreator={toggleCreator} meals={meals} darkMode={darkMode}/>}
+          <MainContainer meals={meals} sidebarVisible={sidebarVisible} darkMode={darkMode}/>
         </div>
         </>
       ) : (

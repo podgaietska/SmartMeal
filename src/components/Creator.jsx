@@ -2,7 +2,7 @@ import { BsSearch } from "react-icons/bs";
 import { useState } from "react";
 import { toast } from "react-toastify";
 
-function Creator({toggleCreator, setIngredient, setIngredients, ingredient, ingredients, addMeal, loading}) {
+function Creator({toggleCreator, setIngredient, setIngredients, ingredient, ingredients, addMeal, loading, darkMode}) {
     const [mealType, setMealType] = useState("Dinner");
 
     const handleEnter = (e) => {
@@ -33,7 +33,7 @@ function Creator({toggleCreator, setIngredient, setIngredients, ingredient, ingr
 
     return (
         <div className="creator-container">
-            <div className="creator-window">
+            <div className={`creator-window ${darkMode && "dark"}`}>
                 <div className="close-button">
                     <h1 onClick={toggleCreator}>&times;</h1>
                 </div>
@@ -42,7 +42,7 @@ function Creator({toggleCreator, setIngredient, setIngredients, ingredient, ingr
                     <div className="col left">
                         <div className="form-group">
                             <label htmlFor="meals">Meal Type</label>
-                            <select className="drop-down-input" name="diet" id="diet" value={mealType} onChange={(e) => setMealType(e.target.value)}>
+                            <select className={`drop-down-input ${darkMode && "dark"}`} name="diet" id="diet" value={mealType} onChange={(e) => setMealType(e.target.value)}>
                                 <option value="Dinner">Dinner</option>
                                 <option value="Lunch">Lunch</option>
                                 <option value="Breakfast">Breakfast</option>
@@ -51,14 +51,14 @@ function Creator({toggleCreator, setIngredient, setIngredients, ingredient, ingr
                         </div>
                     </div>
                     <div className="col rigth">
-                        <div className="search-bar">
-                            <BsSearch />
-                            <input className="search-input" value={ingredient} placeholder="Input an ingredient and press Enter" onChange={(e) => {setIngredient(e.target.value)}} onKeyDown={handleEnter}/>
+                        <div className={`search-bar ${darkMode && "dark"}`}>
+                            <BsSearch class={`icon ${darkMode && "dark"}`}/>
+                            <input className={`search-input ${darkMode && "dark"}`} value={ingredient} placeholder="Input an ingredient and press Enter" onChange={(e) => {setIngredient(e.target.value)}} onKeyDown={handleEnter}/>
                         </div>
-                        <div className="ingredients-container">
+                        <div className={`ingredients-container ${darkMode && "dark"}`}>
                             <div className="ingredients-list">
                                 {ingredients.map((ingredient) => { return (
-                                <div className="ingredient">
+                                <div className={`ingredient ${darkMode && "dark"}`}>
                                     <p className="ingredient-name">{ingredient}</p>
                                     <p className="ingredient-delete" onClick={removeIngredient}>x</p>
                                 </div>
@@ -67,10 +67,10 @@ function Creator({toggleCreator, setIngredient, setIngredients, ingredient, ingr
                         </div>
                     </div>
                     {loading ? (
-                        <button disabled={true} type="submit" className="create-weeks-meals-btn">Generating...</button>
+                        <button disabled={true} type="submit" className={`create-weeks-meals-btn ${darkMode && "dark"}`}>Generating...</button>
                     )
                     : ( 
-                        <button type="submit" className="create-weeks-meals-btn">Generate Meal</button>
+                        <button type="submit" className={`create-weeks-meals-btn ${darkMode && "dark"}`}>Generate Meal</button>
                     )}
                 </form>
             </div>

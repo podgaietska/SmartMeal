@@ -8,7 +8,11 @@
   --darkgrey: #545454;
   --grey: #A6A6A6;
   --lightgrey: #D9D9D9;
-  --bluishgrey: #BCCCCD
+  --bluishgrey: #BCCCCD;
+  --blackish: #303030;
+  --darkgrey: #403E3E;
+  --lighterdarkgrey: #4D4C4C;
+  --darkborder: #545454;
 }
 
 .App {
@@ -18,12 +22,44 @@
   font-family: 'Montserrat', sans-serif;
   width: 100%;
   height: 100vh;
-  
+  background: white; 
+}
+
+.App.dark, .ingredients-container.dark{
+  background: var(--blackish);
+}
+
+.meal-container.dark, .recipe-card.dark{
+  background: var(--blackish);
+  border: none;
+  box-shadow: none;
+}
+
+.main-container.dark, .sidebar-container.dark, .creator-window.dark{
+  background: var(--darkgrey);
+}
+
+.main-container .header.dark, .search-bar.dark, .ingredient.dark, .create-weeks-meals-btn.dark, .add-button.dark, .app-mode.dark{
+  background: var(--lighterdarkgrey);
+}
+
+.paragraph.dark, .create-weeks-meals-btn.dark, .add-button.dark{
+  color: white;
 }
 
 h3, h2, h1, p, input, label{
   margin: 0;
   padding: 0;
+}
+
+.dark select{
+  color: white;
+  background: var(--blackish);
+  border: var(--blackish);
+}
+
+.dark h3, .dark h2, .dark h1, .dark p, .dark input, .dark label, .icon.dark{
+  color: white;
 }
 
 .main{
@@ -98,12 +134,36 @@ h3, h2, h1, p, input, label{
   align-items: center;
 }
 
+.app-mode{
+  width: 2rem;
+  height: 1.5rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  background: var(--lightgrey);
+  margin-right: 2rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 0.5rem;
+}
+
+.choice-circle{
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  background: var(--grey)
+}
+
 .right-container p{
   margin-right: 1rem;
 }
 
 .logout-icon{
   cursor: pointer;
+}
+
+.logout-icon.dark{
+  color: white;
 }
 
 /* Sidebar styles */
@@ -125,6 +185,7 @@ h3, h2, h1, p, input, label{
   position: relative;
   z-index: 1;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .add-button{
@@ -428,6 +489,10 @@ h3, h2, h1, p, input, label{
   background: None;
   width: 100%;
   margin-left: 0.5rem;
+}
+
+.search-input.dark, .search-input.dark::placeholder{
+  color: white;
 }
 
 .search-input:focus{

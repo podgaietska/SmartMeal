@@ -2,7 +2,7 @@ import { BsSearch } from "react-icons/bs";
 import SidebarMealContainer from "./SidebarMealContainer";
 import { useState } from "react";
 
-function Sidebar({toggleCreator, meals}) {
+function Sidebar({toggleCreator, meals, darkMode}) {
     const [searchInput, setSearchInput] = useState("");
     const [filteredMeals, setFilteredMeals] = useState([]);
 
@@ -31,26 +31,26 @@ function Sidebar({toggleCreator, meals}) {
     };
 
     return (
-        <div className="sidebar-container">
+        <div className={`sidebar-container ${darkMode && "dark"}`}>
             <div className="sidebar-inside-container">
-                <div className="search-bar">
-                    <BsSearch />
-                    <input className="search-input" value={searchInput} placeholder="Search meal or ingredients" onChange={handleInputChange} onKeyDown={handleEnter}/>
+                <div className={`search-bar ${darkMode && "dark"}`}>
+                    <BsSearch class={`icon ${darkMode && "dark"}`}/>
+                    <input className={`search-input ${darkMode && "dark"}`} value={searchInput} placeholder="Search meal or ingredients" onChange={handleInputChange} onKeyDown={handleEnter}/>
                 </div>
                 <div className="enteries-container">
                     {filteredMeals.length > 0 ? filteredMeals.map((meal, index) => {
                         return(
-                        <SidebarMealContainer meal={meal}/>
+                        <SidebarMealContainer meal={meal} darkMode={darkMode}/>
                         )
                     }) :
                     sortedMeals.map((meal, index) => {
                         return(
-                        <SidebarMealContainer meal={meal}/>
+                        <SidebarMealContainer meal={meal} darkMode={darkMode}/>
                         )
                     })
                     }
                 </div>
-                <button className="add-button" onClick={toggleCreator}>+</button>
+                <button className={`add-button ${darkMode && "dark"}`} onClick={toggleCreator}>+</button>
             </div>
         </div>
     )

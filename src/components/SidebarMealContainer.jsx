@@ -2,7 +2,7 @@ import {motion} from 'framer-motion';
 import Overlay from './Overlay';
 import {useState} from 'react';
 
-function SidebarMealContainer({meal}){
+function SidebarMealContainer({meal, darkMode}){
     const identifier = {'Dinner': '#EB9494', 'Lunch': '#80A3D1', 'Breakfast': '#545454', 'Snack': '#A6A6A6'};
     const [opened, setOpened] = useState(false);
 
@@ -25,7 +25,7 @@ function SidebarMealContainer({meal}){
 
     return (
         <div>
-        <div className="meal-container" onClick={openCard}>
+        <div className={`meal-container ${darkMode && "dark"}`} onClick={openCard}>
             <div className="colored-identifier">
                 <div className="circle" style={{background: identifier[meal.meal_type]}}></div>
             </div>

@@ -2,7 +2,7 @@ import RecipeCard from './RecipeCard';
 import { useState, useEffect } from 'react';
 import useMediaQuery from '../hooks/useMediaQuery';
 
-function RecipeList({onUpdateObituary, meals}) {
+function RecipeList({onUpdateObituary, meals, darkMode}) {
     const [fourColumns, setfourColumns] = useState([]);
     const [twoColumns, settwoColumns] = useState([]);
 
@@ -42,7 +42,7 @@ function RecipeList({onUpdateObituary, meals}) {
             {fourColumns.map((column) => (
                 <div className="column">
                     {column.map((meal) => (
-                    <RecipeCard meal={meal} />
+                    <RecipeCard meal={meal} darkMode={darkMode}/>
                     ))}
                 </div>
             ))}
@@ -52,7 +52,7 @@ function RecipeList({onUpdateObituary, meals}) {
             {twoColumns.map((column) => (
                 <div className="column">
                     {column.map((meal) => (
-                    <RecipeCard meal={meal}/>
+                    <RecipeCard meal={meal} darkMode={darkMode}/>
             ))}
                 </div>
             ))}

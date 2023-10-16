@@ -2,7 +2,7 @@ import {motion} from 'framer-motion';
 import Overlay from './Overlay';
 import {useState} from 'react';
 
-function RecipeCard({meal}) {
+function RecipeCard({meal, darkMode}) {
     const [opened, setOpened] = useState(false);
     const paragraphByIndex = {0: "first", 1: "second", 2: "third", 3: "fourth"};
     
@@ -23,7 +23,7 @@ function RecipeCard({meal}) {
 
     return (
         <div>
-        <motion.div className="recipe-card" whileHover={{ scale : 1.1 }} onClick={openCard}>
+        <motion.div className={`recipe-card ${darkMode && "dark"}`} whileHover={{ scale : 1.1 }} onClick={openCard}>
             <div className="recipe-text">
                 <h3>{meal.title}</h3>
                 {meal.ingredients.map((ingredient, index) => {
@@ -35,16 +35,16 @@ function RecipeCard({meal}) {
         </motion.div>
         {opened && (
             <Overlay close={() => setOpened(false)}>
-                <motion.div className="creator-window" variants={openedCardVariants}>
+                <motion.div className={`creator-window ${darkMode && "dark"}`} variants={openedCardVariants}>
                     <div className="close-button">
                         <h1 onClick={closeCard}>&times;</h1>
                     </div>
                     <div className="meal-recipe">
                         {paragraphs.map((paragraph, pIndex) => {
                             return (
-                                <div className={`paragraph ${paragraphByIndex[pIndex]}`}>
-                                    {pIndex === 2 && <h4>Ingredients:</h4>}
-                                    {pIndex === 3 && <h4>Step by step instructions:</h4>}
+                                <div className={`paragraph ${paragraphByIndex[pIndex]} ${darkMode && "dark"}`}>
+                                    {/* {pIndex === 2 && <h4>Ingredients:</h4>}
+                                    {pIndex === 3 && <h4>Step by step instructions:</h4>} */}
                                     {paragraph.split('\n').map((line, lIndex) => (
                                         <p key={lIndex}>{line}</p>
                                     ))}
