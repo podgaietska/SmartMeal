@@ -26,6 +26,7 @@ function App() {
 
   const toggleSidebar = () => {
     setSidebarVisible(!sidebarVisible);
+
   };
 
   useEffect(() => {
@@ -71,7 +72,6 @@ function App() {
       });
 
         setMeals(processedMeals);
-        console.log(processedMeals)
       };
       if (profile)
         fetchData();
@@ -113,7 +113,6 @@ function extractIngredients(meal_recipe) {
   const login = useGoogleLogin({
     onSuccess: (response) => {
       setUser(response)
-      console.log(response);
       localStorage.setItem("user", JSON.stringify(response));
     },
     onError: (error) => console.log("Login Failed:", error),
@@ -138,7 +137,6 @@ function extractIngredients(meal_recipe) {
       }
 
       const data = await res.json();
-      console.log("data: ", data);
 
       const processedMeal = (meal) => {
         return {
@@ -157,6 +155,7 @@ function extractIngredients(meal_recipe) {
     }
   }
 
+
   return (
     <div className="App">
       {profile ? (
@@ -165,7 +164,7 @@ function extractIngredients(meal_recipe) {
         <Header profile={profile} logout={logOut} toggleSidebar={toggleSidebar}/>
         <div className="main">
           {sidebarVisible && <Sidebar toggleCreator={toggleCreator} meals={meals}/>}
-          <MainContainer meals={meals}/>
+          <MainContainer meals={meals} sidebarVisible={sidebarVisible}/>
         </div>
         </>
       ) : (

@@ -10,7 +10,6 @@ function Creator({toggleCreator, setIngredient, setIngredients, ingredient, ingr
             e.preventDefault();
             setIngredients([...ingredients, ingredient]);
             setIngredient("");
-            console.log(ingredients)
         }
     };
 
@@ -25,7 +24,6 @@ function Creator({toggleCreator, setIngredient, setIngredients, ingredient, ingr
             mealType: mealType,
             ingredients: ingredients
         }
-
         toast.promise(addMeal(newMeal), {
             pending: "Generating...",
             success: "Meal Successfully Generated!",
@@ -55,7 +53,7 @@ function Creator({toggleCreator, setIngredient, setIngredients, ingredient, ingr
                     <div className="col rigth">
                         <div className="search-bar">
                             <BsSearch />
-                            <input className="ingredient-search" value={ingredient} placeholder="Input an ingredient and press Enter" onChange={(e) => {setIngredient(e.target.value)}} onKeyDown={handleEnter}/>
+                            <input className="search-input" value={ingredient} placeholder="Input an ingredient and press Enter" onChange={(e) => {setIngredient(e.target.value)}} onKeyDown={handleEnter}/>
                         </div>
                         <div className="ingredients-container">
                             <div className="ingredients-list">

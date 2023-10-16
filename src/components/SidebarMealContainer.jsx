@@ -2,8 +2,10 @@ import {motion} from 'framer-motion';
 import Overlay from './Overlay';
 import {useState} from 'react';
 
-function RecipeCard({meal}) {
+function SidebarMealContainer({meal}){
+    const identifier = {'Dinner': '#EB9494', 'Lunch': '#80A3D1', 'Breakfast': '#545454', 'Snack': '#A6A6A6'};
     const [opened, setOpened] = useState(false);
+
     const paragraphByIndex = {0: "first", 1: "second", 2: "third", 3: "fourth"};
     
     const paragraphs = meal.meal_recipe.split('\n\n'); // split by double newline for paragraphs
@@ -23,16 +25,15 @@ function RecipeCard({meal}) {
 
     return (
         <div>
-        <motion.div className="recipe-card" whileHover={{ scale : 1.1 }} onClick={openCard}>
-            <div className="recipe-text">
-                <h3>{meal.title}</h3>
-                {meal.ingredients.map((ingredient, index) => {
-                    return (
-                        <p key={index}>- {ingredient}</p>
-                    )
-                })}
+        <div className="meal-container" onClick={openCard}>
+            <div className="colored-identifier">
+                <div className="circle" style={{background: identifier[meal.meal_type]}}></div>
             </div>
-        </motion.div>
+            <div className="text-container">
+                <p>{meal.title}</p>
+                <span>{meal.meal_type}</span>
+            </div>
+        </div>
         {opened && (
             <Overlay close={() => setOpened(false)}>
                 <motion.div className="creator-window" variants={openedCardVariants}>
@@ -55,8 +56,7 @@ function RecipeCard({meal}) {
                 </motion.div>
             </Overlay>
         )}
-        </div>
-    );
+    </div>
+    )
 }
-
-export default RecipeCard;
+export default SidebarMealContainer;
