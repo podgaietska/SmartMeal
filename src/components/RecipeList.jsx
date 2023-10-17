@@ -10,16 +10,16 @@ function RecipeList({onUpdateObituary, meals, darkMode}) {
 
     useEffect (() => {
         const fourColumns = meals.reduce(function (columns, item, index) {
-          const columnIndex = index % 4;
-          const rowIndex = Math.floor(index / 4);
-          if (!columns[columnIndex]) {
-              columns[columnIndex] = [];
-          }
-          columns[columnIndex][rowIndex] = item;
-          return columns;
-      }, []);
+            const columnIndex = index % 4;
+            const rowIndex = Math.floor(index / 4);
+            if (!columns[columnIndex]) {
+                columns[columnIndex] = [];
+            }
+            columns[columnIndex][rowIndex] = item;
+            return columns;
+    }, []);
 
-      const twoColumns = meals.reduce(function (columns, item, index) {
+    const twoColumns = meals.reduce(function (columns, item, index) {
         const columnIndex = index % 2;
         const rowIndex = Math.floor(index / 2);
         if (!columns[columnIndex]) {
@@ -31,7 +31,7 @@ function RecipeList({onUpdateObituary, meals, darkMode}) {
         
         settwoColumns(twoColumns);
         setfourColumns(fourColumns);
-      }, [meals]);
+    }, [meals]);
 
     if (meals.length === 0) return <div className="no-meals"></div>;
 

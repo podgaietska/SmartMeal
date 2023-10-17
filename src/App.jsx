@@ -7,6 +7,7 @@ import Creator from './components/Creator';
 import { googleLogout, useGoogleLogin } from "@react-oauth/google";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import useMediaQuery from './hooks/useMediaQuery';
 
 function App() {
   const [user, setUser] = useState(localStorage.user ? JSON.parse(localStorage.user) : null);
@@ -155,6 +156,16 @@ function extractIngredients(meal_recipe) {
       toggleCreator();
     }
   }
+
+  const isWindow = useMediaQuery("(min-width: 780px)");
+
+  useEffect(() => {
+    if (!isWindow) {
+      setSidebarVisible(false);
+    } else{
+      setSidebarVisible(true);
+    }
+  }, [isWindow]);
 
 
   return (
