@@ -4,6 +4,7 @@
 SmartMeal - An innovative application powered by OpenAI that empowers users to create delicious meals effortlessly using ingredients they already have in their fridge. Explore a world of culinary possibilities and reduce food waste with SmartMeal's recipe generation technology. Say goodbye to last-minute grocery runs and hello to convenient, customized recipes right at your fingertips!
 
 ## 🙈  Sneak Peak
+![ezgif com-video-to-gif](https://github.com/podgaietska/SmartMeal-Fullstack-App/assets/113950195/f67d6b8c-cad5-42b2-96be-64906f8dcfa4)
 
 
 ## 💻  Tech Stack
