@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# SmartMeal 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4e528e75-603b-451d-b019-f26212253aa8/deploy-status)](https://taupe-dieffenbachia-d5d916.netlify.app)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+SmartMeal - An innovative application powered by OpenAI that empowers users to create delicious meals effortlessly using ingredients they already have in their fridge. Explore a world of culinary possibilities and reduce food waste with SmartMeal's recipe generation technology. Say goodbye to last-minute grocery runs and hello to convenient, customized recipes right at your fingertips!
 
-## Available Scripts
+## 🙈  Sneak Peak
 
-In the project directory, you can run:
 
-### `npm start`
+## 💻  Tech Stack
+**Frontend:**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![reactjs](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)&nbsp;
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**Backend:**
 
-### `npm test`
+![terraform](https://img.shields.io/badge/Terraform-7B42BC?style=for-the-badge&logo=terraform&logoColor=white
+)&nbsp;
+![aws](https://img.shields.io/badge/Amazon_AWS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)&nbsp;
+![aws](https://img.shields.io/badge/Amazon%20DynamoDB-4053D6?style=for-the-badge&logo=Amazon%20DynamoDB&logoColor=white
+)&nbsp;
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+**Deployed on:**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)&nbsp;
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Other:**
+OpenAI API
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🚀 Web App Deployment
+You can access the complete SmartMeal experience through the link below. Simply copy the url and enter it into your browser to explore the products, create an account and begin adding items to your cart or wishlist:
 
-### `npm run eject`
+```bash
+https://taupe-dieffenbachia-d5d916.netlify.app
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🏃 Quick Start
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To quickly set up and launch the Ecommerce Client project on your local machine, follow the steps below:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Open the terminal and clone the repository.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+git clone https://github.com/podgaietska/SmartMeal-Fullstack-App.git
+```
 
-## Learn More
+2. Navigate to the project source root.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+cd SmartMeal-Fullstack-App/
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3. Install the required dependencies of server.
 
-### Code Splitting
+```bash
+npm install 
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+4. Start app.
 
-### Analyzing the Bundle Size
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
