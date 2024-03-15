@@ -1,7 +1,7 @@
 # SmartMeal 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/4e528e75-603b-451d-b019-f26212253aa8/deploy-status)](https://taupe-dieffenbachia-d5d916.netlify.app)
 
-SmartMeal - An innovative application powered by OpenAI that empowers users to create delicious meals effortlessly using ingredients they already have in their fridge. This poject uses React to create an interactive user interface, and is supported by a robust backend infrastructure architected in Terraform and a variety of AWS services.
+SmartMeal - An innovative application powered by OpenAI that empowers users to create delicious meals effortlessly using ingredients they already have in their fridge. This project used React to create an interactive user interface, and is supported by a robust backend infrastructure architected with Terraform and a variety of AWS services.
 
 ## 🙈  Sneak Peak
 ![ezgif com-video-to-gif](https://github.com/podgaietska/SmartMeal-Fullstack-App/assets/113950195/f67d6b8c-cad5-42b2-96be-64906f8dcfa4)
