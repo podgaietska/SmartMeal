@@ -61,3 +61,6 @@ __pycache__/
 .langgraph_api/
 apps/web/node_modules/
 apps/web/dist/
+
+# Local planning notes
+plan.md
