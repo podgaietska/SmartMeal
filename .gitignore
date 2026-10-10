@@ -52,3 +52,12 @@ yarn-error.log*
 /functions/get_meals/urllib3
 /functions/get_meals/urllib3-1.26.7.dist-info
 /functions/get_meals/urllib3-2.0.6.dist-info/
+# SmartMeal v2 (apps/)
+.env
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.langgraph_api/
+apps/web/node_modules/
+apps/web/dist/
