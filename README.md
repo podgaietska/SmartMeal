@@ -1,65 +1,42 @@
-# SmartMeal 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/4e528e75-603b-451d-b019-f26212253aa8/deploy-status)](https://taupe-dieffenbachia-d5d916.netlify.app)
+# SmartMeal
 
-SmartMeal - An innovative application powered by OpenAI that empowers users to create delicious meals effortlessly using ingredients they already have in their fridge. This project used React to create an interactive user interface, and is supported by a robust backend infrastructure architected with Terraform and a variety of AWS services.
+A cooking agent that turns the ingredients you already have into a recipe.
 
-## 🙈  Sneak Peak
-![ezgif com-video-to-gif](https://github.com/podgaietska/SmartMeal-Fullstack-App/assets/113950195/f67d6b8c-cad5-42b2-96be-64906f8dcfa4)
+> **Rebuild in progress.** SmartMeal is being rebuilt as a LangGraph agent with Supabase and a new
+> React + TypeScript UI. Right now the agent generates a single structured recipe, and the web app
+> is a placeholder.
 
+## Tech stack
 
-## 💻  Tech Stack
-**Frontend:**
+- **Agent:** Python 3.12, [LangGraph](https://langchain-ai.github.io/langgraph/), LangChain chat models (OpenAI by default), managed with [uv](https://docs.astral.sh/uv/)
+- **Web:** Vite, React, TypeScript
+- **CI:** GitHub Actions
 
-![reactjs](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)&nbsp;
+## Repository layout
 
-**Backend:**
-
-![terraform](https://img.shields.io/badge/Terraform-7B42BC?style=for-the-badge&logo=terraform&logoColor=white
-)&nbsp;
-![aws](https://img.shields.io/badge/Amazon_AWS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)&nbsp;
-![aws](https://img.shields.io/badge/Amazon%20DynamoDB-4053D6?style=for-the-badge&logo=Amazon%20DynamoDB&logoColor=white
-)&nbsp;
-
-
-**Deployed on:**
-
-![netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)&nbsp;
-
-**Other:**
-OpenAI API
-
-## 🚀 Web App Deployment
-You can access the deployed version of SmartMeal through the link below. Copy the url and enter it into your browser:
-
-```bash
-https://taupe-dieffenbachia-d5d916.netlify.app
+```
+apps/
+  agent/   LangGraph agent (Python)
+  web/     Web app (Vite + React + TypeScript)
 ```
 
-## 🏃 Quick Start
+## Getting started
 
-To launch SmartMeal on your local machine, follow the steps below:
-
-1. Open the terminal and clone the repository.
+### Agent
 
 ```bash
-git clone https://github.com/podgaietska/SmartMeal-Fullstack-App.git
+cd apps/agent
+cp .env.example .env    # set SMARTMEAL_MODEL and that provider's API key
+uv sync --extra openai
+uv run langgraph dev    # API on http://localhost:2024 and LangGraph Studio in the browser
 ```
 
-2. Navigate to the project source root.
+See [apps/agent/README.md](apps/agent/README.md) for lint and test commands.
+
+### Web
 
 ```bash
-cd SmartMeal-Fullstack-App/
+cd apps/web
+npm install
+npm run dev
 ```
-
-3. Install the required dependencies of server.
-
-```bash
-npm install 
-```
-
-4. Start app.
-
-```bash
-npm start
-```
-
