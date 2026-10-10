@@ -7,7 +7,7 @@ A LangGraph agent that turns the ingredients you have into a recipe.
 ```bash
 cd apps/agent
 cp .env.example .env    # set SMARTMEAL_MODEL and that provider's API key
-uv sync
+uv sync --extra openai # or --extra anthropic, to match SMARTMEAL_MODEL
 uv run langgraph dev    # API on http://localhost:2024 and LangGraph Studio in the browser
 ```
 
