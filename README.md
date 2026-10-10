@@ -1,6 +1,11 @@
 # SmartMeal 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/4e528e75-603b-451d-b019-f26212253aa8/deploy-status)](https://taupe-dieffenbachia-d5d916.netlify.app)
 
+> **Rebuild in progress.** SmartMeal is being rebuilt as a LangGraph agent with Supabase and a new
+> React + TypeScript UI. New code lives in `apps/agent` and `apps/web`; the original app below
+> (Create React App + AWS Lambda) is being retired.
+
+
 SmartMeal - An innovative application powered by OpenAI that empowers users to create delicious meals effortlessly using ingredients they already have in their fridge. This project used React to create an interactive user interface, and is supported by a robust backend infrastructure architected with Terraform and a variety of AWS services.
 
 ## 🙈  Sneak Peak
